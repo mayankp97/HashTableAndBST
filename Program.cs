@@ -6,7 +6,8 @@ namespace HashTableAndBST
     {
         static void Main(string[] args)
         {
-            HashTableDemo();
+            //HashTableDemo();
+            BinarySearchTreeDemo();
         }
 
         public static void HashTableDemo()
@@ -31,6 +32,18 @@ namespace HashTableAndBST
             map.Remove("avoidable");
             Console.WriteLine("After Removal : ");
             Console.WriteLine("Frequency of word \"avoidable\" is : {0}", map.Get("avoidable"));
+        }
+
+        public static void BinarySearchTreeDemo()
+        {
+            Console.WriteLine("Welcome to BInary Search Tree Demo!");
+
+            var bst = new BinarySearchTree<int>();
+            bst.Add(56);
+            bst.Add(30);
+            bst.Add(70);
+            bst.Display(bst.root);
+
         }
     }
 }
