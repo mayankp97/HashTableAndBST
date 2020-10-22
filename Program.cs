@@ -45,6 +45,7 @@ namespace HashTableAndBST
                 bst.Add(num);
             }
             bst.Display(bst.root);
+            bst.Search(63);
             Console.WriteLine(bst.Size());
 
         }

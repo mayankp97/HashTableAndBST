@@ -75,6 +75,26 @@ namespace HashTableAndBST
             }
             return maxSize-1;
         }
+
+        public void Search(T data)
+        {
+            if (Parent.data.CompareTo(data) == 0)
+            {
+                Console.WriteLine("Found");
+                return;
+            }
+            if(Parent.data.CompareTo(data) < 0)
+            {
+                Parent = Parent.RightChild;
+                Search(data);
+                
+            }
+            else
+            {
+                Parent = Parent.leftChild;
+                Search(data);
+            }
+        }
         public void Display(MyBinaryNode<T> parent)
         {
             Console.WriteLine("Parent : {0}", parent.data);
