@@ -26,6 +26,11 @@ namespace HashTableAndBST
                 }
             }
             Console.WriteLine("Frequency of Word \"paranoid\" is : {0}", map.Get("paranoid"));
+            Console.WriteLine("Before Removal : ");
+            Console.WriteLine("Frequency of word \"avoidable\" is : {0}", map.Get("avoidable"));
+            map.Remove("avoidable");
+            Console.WriteLine("After Removal : ");
+            Console.WriteLine("Frequency of word \"avoidable\" is : {0}", map.Get("avoidable"));
         }
     }
 }

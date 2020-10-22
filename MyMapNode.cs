@@ -49,6 +49,25 @@ namespace HashTableAndBST
             temp.Value = value;
 
         }
+        public void Remove(K key)
+        {
+            int position = GetArrayPosition(key);
+            var linkedList = GetLinkedList(position);
+            bool itemFound = false;
+            var foundItem = default(KeyValue<K, V>);
+            foreach (var item in linkedList)
+            {
+                if (item.Key.Equals(key))
+                {
+                    itemFound = true;
+                    foundItem = item;
+                }
+            }
+            if (itemFound)
+            {
+                linkedList.Remove(foundItem);
+            }
+        }
 
         protected int GetArrayPosition(K key)
         {
