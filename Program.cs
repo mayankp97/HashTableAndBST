@@ -39,11 +39,15 @@ namespace HashTableAndBST
             Console.WriteLine("Welcome to BInary Search Tree Demo!");
 
             var bst = new BinarySearchTree<int>();
-            bst.Add(56);
-            bst.Add(30);
-            bst.Add(70);
+            var numbers = new int[13] { 56, 30, 70, 22, 40, 60, 95, 11, 65, 3, 16, 63, 67 };
+            foreach(var num in numbers)
+            {
+                bst.Add(num);
+            }
             bst.Display(bst.root);
+            Console.WriteLine(bst.Size());
 
         }
+
     }
 }

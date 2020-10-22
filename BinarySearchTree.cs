@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace HashTableAndBST
@@ -27,7 +28,7 @@ namespace HashTableAndBST
             {
                 var node = new MyBinaryNode<T>(data);
                 var temp = Parent;
-                if (data.CompareTo(root.data) < 0)
+                if (data.CompareTo(Parent.data) < 0)
                 {
                     if (temp.leftChild == null)
                         temp.leftChild = node;
@@ -50,7 +51,30 @@ namespace HashTableAndBST
             }
             Parent = root;
         }
+        public int Size()
+        {
+            var temp = root;
+            var maxSize = 0;
+            var stk = new Stack<MyBinaryNode<T>>();
+            
 
+            while(temp != null || stk.Count != 0)
+            {
+                var size = 0;
+                while(temp != null)
+                {
+                    stk.Push(temp);
+                    temp = temp.leftChild;
+                    size++;
+                }
+                temp = stk.Pop();
+                
+                temp = temp.RightChild;
+                maxSize = maxSize < size ? size : maxSize;
+
+            }
+            return maxSize-1;
+        }
         public void Display(MyBinaryNode<T> parent)
         {
             Console.WriteLine("Parent : {0}", parent.data);
